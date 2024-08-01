@@ -14,15 +14,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { navItems } from '@/data';
+import { WindowProps } from '@/libs/type';
 
-interface Props {
-    window?: () => Window;
-}
 
 const drawerWidth = 240;
-const navItems = ['About', 'Experiences', 'Projects', 'Contact'];
 
-export default function Header(props: Props) {
+export default function Header(props: WindowProps) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -39,7 +37,7 @@ export default function Header(props: Props) {
             <List>
                 {navItems.map((item, index) => (
                     <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton href={`#${item}`} sx={{ textAlign: 'center' }}>
                             <ListItemText primary={`${index + 1}. ${item}`} />
                         </ListItemButton>
                     </ListItem>
@@ -74,7 +72,7 @@ export default function Header(props: Props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item, index) => (
-                            <Button key={item} color='primary'>
+                            <Button href={`#${item}`} key={item} color='primary'>
                                 <span style={{ color: '#45afa0' }}>0{index + 1}.</span>{item}
                             </Button>
                         ))}
