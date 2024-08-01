@@ -1,18 +1,34 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zain:wght@200;300;400;700;800;900&display=swap');
 body{
   width: 100%;
   height: 100vh;
-  font-family: "Zain", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+.hexagon {
+  position: relative;
+  padding: 2px;
+  height: 300px;
+  width: 300px;
+  /* We cut the element in an hexagonal shape */
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.hexagon::after { 
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  content: '';  
+  background: #45afa0;
+  clip-path: polygon(
+      /* We first go around the pseudo element to recreate the hexagon */
+      50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%, 
+      /* We make sure to close the hexagon and go back to the start */
+      50% 0%, 
+      /* We then go down inside the hexagon (feel free to change the border size, here it is of 10px)*/
+      50% 2px,
+      /* We finally go around the pseudo element in reverse to carve a smaller hexagon inside */
+      /* 0.49999999999999994 is sin(30deg) as it's only supported in Safari for now */
+      2px calc(25% + 2px * 0.49999999999999994), 2px calc(75% + 2px * -0.49999999999999994), 50% calc(100% - 2px), calc(100% - 2px) calc(75% + 2px * -0.49999999999999994), calc(100% - 2px) calc(25% + 2px * 0.49999999999999994), 50% 2px
+  );
+
 }
