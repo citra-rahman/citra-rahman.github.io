@@ -7,7 +7,7 @@ import WorkCard from "./components/WorkCard";
 import CssBaseline from '@mui/material/CssBaseline';
 import { experiences } from "@/data";
 
-export const gruppo = Gruppo({
+const gruppo = Gruppo({
   subsets: ["latin"],
   weight: '400'
 });
