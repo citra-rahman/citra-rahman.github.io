@@ -62,7 +62,15 @@ export default function Home() {
             <Typography component='div' sx={{ pb: 4, textAlign: 'justify' }}>
               I am a software engineer specializing in building web application. Currently, I am living in Istanbul, Turkey. I am focusing on building applications with Ruby On Rails and or React JS.
             </Typography>
-            <Button color='secondary' variant="outlined">Check out my Resume</Button>
+            <Button
+              component="a"
+              color='secondary'
+              variant="outlined"
+              target="_blank"
+              href="https://www.dropbox.com/scl/fi/mwgw35xvc6qbtyw9lk1tm/Citra-Resume.pdf?rlkey=1kp1ursb98i41b0d6eupwe6b9&st=6zs055x3&raw=1"
+            >
+              Check out my Resume
+            </Button>
           </Box>
           <Box id="experiences" component="section" display='flex' flexDirection='column' gap={5} sx={{ mb: '15vmax' }}>
             <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>Experiences</Typography>
@@ -93,7 +101,7 @@ export default function Home() {
             }
           </Box>
           <Box id="contacts" component="section" display='flex' flexDirection='row' alignItems='center'>
-              <Footer/>
+            <Footer />
           </Box>
         </Box>
       </main>
