@@ -1,5 +1,4 @@
-
-export const navItems = ['about', 'experiences', 'projects', 'contact'];
+export const navItems = ["about", "experiences", "projects", "contacts"];
 
 export const experiences = [
   {
@@ -38,5 +37,15 @@ export const experiences = [
       "WebSocket",
       "AWS",
     ],
+  },
+];
+
+export const projects = [
+  {
+    name: "To Do Application",
+    imgPath: "/todo-app-web.png",
+    description:
+      "Simple ToDo Web Application built using ReactJS (Front End) and Firebase (Back End).",
+    link: "https://todoist-34829.web.app/",
   },
 ];

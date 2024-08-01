@@ -1,11 +1,14 @@
 "use client";
 import { Box, Button, Toolbar, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import IconButton from "@mui/material/IconButton";
 import { Gruppo } from "next/font/google";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import WorkCard from "./components/WorkCard";
+import ProjectCard from "./components/ProjectCard";
 import CssBaseline from '@mui/material/CssBaseline';
-import { experiences } from "@/data";
+import { experiences, projects } from "@/data";
 
 const gruppo = Gruppo({
   subsets: ["latin"],
@@ -61,7 +64,7 @@ export default function Home() {
             </Typography>
             <Button color='secondary' variant="outlined">Check out my Resume</Button>
           </Box>
-          <Box id="experiences" component="section" display='flex' flexDirection='column' gap={5}>
+          <Box id="experiences" component="section" display='flex' flexDirection='column' gap={5} sx={{ mb: '15vmax' }}>
             <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>Experiences</Typography>
             {
               experiences.map((item, index) =>
@@ -74,6 +77,23 @@ export default function Home() {
                 />
               )
             }
+          </Box>
+          <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '15vmax' }}>
+            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Projects</Typography>
+            {
+              projects.map((item, index) =>
+                <ProjectCard
+                  key={index}
+                  name={item.name}
+                  imgPath={item.imgPath}
+                  description={item.description}
+                  link={item.link}
+                />
+              )
+            }
+          </Box>
+          <Box id="contacts" component="section" display='flex' flexDirection='row' alignItems='center'>
+              <Footer/>
           </Box>
         </Box>
       </main>
