@@ -10,7 +10,7 @@ const textStyle = {
 export default function WorkCard({ date, title, description, tags }: workCardProp) {
     return (
         <Box display='flex' flexDirection='row'>
-            <Typography minWidth={100} sx={textStyle}>{date}</Typography>
+            <Typography minWidth={120} sx={textStyle}>{date}</Typography>
             <Box display='flex' flexDirection='column'>
                 <Typography sx={textStyle}>{title}</Typography>
                 {

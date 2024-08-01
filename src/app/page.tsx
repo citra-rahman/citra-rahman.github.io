@@ -87,7 +87,7 @@ export default function Home() {
             }
           </Box>
           <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '15vmax' }}>
-            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Projects</Typography>
+            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Personal Projects</Typography>
             {
               projects.map((item, index) =>
                 <ProjectCard

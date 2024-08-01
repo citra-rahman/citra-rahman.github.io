@@ -38,6 +38,17 @@ export const experiences = [
       "AWS",
     ],
   },
+  {
+    date: "2019 - Present",
+    title: "Freelance Web Developer",
+    description: [
+      "Create UI Prototype using For Traject Data Application",
+      "Chat Platform: Create Responsive Navigation in the App",
+      "TD Status Page React.js Prototype Challenge",
+      "JSON API Specification and Documentation for Angular Web Application"
+    ],
+    tags:["React JS", "Next JS", "Express JS", "Swagger"]
+  }
 ];
 
 export const projects = [
@@ -45,7 +56,7 @@ export const projects = [
     name: "To Do Application",
     imgPath: "/todo-app-web.png",
     description:
-      "Simple ToDo Web Application built using ReactJS (Front End) and Firebase (Back End).",
+      "Simple To Do Web Application built using ReactJS (Front End) and Firebase (Back End).",
     link: "https://todoist-34829.web.app/",
   },
 ];
