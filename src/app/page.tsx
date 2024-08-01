@@ -41,7 +41,7 @@ export default function Home() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'start',
-          padding: { md: '15vmax 25vmax', xs: '20vmax' }
+          padding: { md: '15vmax 25vmax', xs: '5vmax' }
         }}>
           <Toolbar />
           <Box id="about" component="section" sx={{ mb: '15vmax' }}>
