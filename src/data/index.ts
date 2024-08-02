@@ -63,6 +63,12 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "Traject Data Application",
+    imgPath: "/traject-data.png",
+    description: "Web Prototype challenge by Top Coder, built using React JS and Material UI.",
+    link: "https://wonderful-alfajores-4e26f4.netlify.app"
+  },
+  {
     name: "To Do Application",
     imgPath: "/todo-app-web.png",
     description:

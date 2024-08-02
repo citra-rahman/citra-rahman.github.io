@@ -85,8 +85,8 @@ export default function Home() {
               )
             }
           </Box>
-          <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '15vmax' }} gap={2}>
-            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Personal Projects</Typography>
+          <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '5vmax' }} gap={2}>
+            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Projects</Typography>
             {
               projects.map((item, index) =>
                 <ProjectCard
@@ -101,7 +101,7 @@ export default function Home() {
           </Box>
         </Box>
       </main>
-      <Box id="contacts" component="section">
+      <Box id="contacts" component="section" sx={{ pb: '5vmax' }}>
         <Footer />
       </Box>
     </ThemeProvider>
