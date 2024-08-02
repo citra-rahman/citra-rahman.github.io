@@ -7,7 +7,7 @@ import { navItems } from "@/data";
 export default function Footer() {
     return (
         <Grid display='flex' flexDirection='row' justifyContent='center' container>
-            <Grid item>
+            <Grid sx={{display: {xs: 'none', md: 'block'}}} item>
                 {navItems.map((item, index) => (
                     <Button href={`#${item}`} key={item} color='primary'>
                         <span style={{ color: '#45afa0' }}>0{index + 1}.</span>{item}

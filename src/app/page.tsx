@@ -1,14 +1,13 @@
 "use client";
 import { Box, Button, Toolbar, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import IconButton from "@mui/material/IconButton";
 import { Gruppo } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WorkCard from "./components/WorkCard";
 import ProjectCard from "./components/ProjectCard";
 import CssBaseline from '@mui/material/CssBaseline';
-import { experiences, projects } from "@/data";
+import { about, experiences, projects } from "@/data";
 
 const gruppo = Gruppo({
   subsets: ["latin"],
@@ -35,8 +34,8 @@ export default function Home() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
+      <Header />
       <main>
-        <Header />
         <Box sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -52,24 +51,24 @@ export default function Home() {
             }}
               gutterBottom
             >
-              Citra Puspita Rahman.</Typography>
+              {about.name}</Typography>
             <Typography
               sx={{
                 typography: { xs: 'h5', md: 'h3' },
                 fontWeight: 'bold'
               }}
-              gutterBottom>I build things for the web.</Typography>
+              gutterBottom>{about.headline}</Typography>
             <Typography component='div' sx={{ pb: 4, textAlign: 'justify' }}>
-              I am a software engineer specializing in building web application. Currently, I am living in Istanbul, Turkey. I am focusing on building applications with Ruby On Rails and or React JS.
+              {about.description}
             </Typography>
             <Button
               component="a"
               color='secondary'
               variant="outlined"
               target="_blank"
-              href="https://www.dropbox.com/scl/fi/mwgw35xvc6qbtyw9lk1tm/Citra-Resume.pdf?rlkey=1kp1ursb98i41b0d6eupwe6b9&st=6zs055x3&raw=1"
+              href={about.resumeLink}
             >
-              Check out my Resume
+              {about.resumeButtonName}
             </Button>
           </Box>
           <Box id="experiences" component="section" display='flex' flexDirection='column' gap={5} sx={{ mb: '15vmax' }}>
@@ -86,7 +85,7 @@ export default function Home() {
               )
             }
           </Box>
-          <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '15vmax' }}>
+          <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '15vmax' }} gap={2}>
             <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Personal Projects</Typography>
             {
               projects.map((item, index) =>
@@ -100,11 +99,11 @@ export default function Home() {
               )
             }
           </Box>
-          <Box id="contacts" component="section" display='flex' flexDirection='row' alignItems='center'>
-            <Footer />
-          </Box>
         </Box>
       </main>
+      <Box id="contacts" component="section">
+        <Footer />
+      </Box>
     </ThemeProvider>
   )
 }
