@@ -84,10 +84,10 @@ export const projects = [
     link: "https://covid101.netlify.app/",
   },
   {
-    name: "Shispland OMS",
+    name: "Shipsland OMS",
     imgPath: "/shipsland.png",
     description:
-      "An Order Management System to manage order from all e-commerce platforms. Built with ReactJS (front-end), Node Js (Backend)",
+      "An Order Management System to manage order from all e-commerce platforms. Built with ReactJS (front-end), Node Js (Backend).",
     link: "https://shipsland.netlify.app/",
   }
 ];
