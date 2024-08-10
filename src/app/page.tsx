@@ -1,12 +1,14 @@
 "use client";
+import { useState } from "react";
 import { Box, Button, Toolbar, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Gruppo } from "next/font/google";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import WorkCard from "./components/WorkCard";
-import ProjectCard from "./components/ProjectCard";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import WorkCard from "@/components/WorkCard";
+import ProjectCard from "@/components/ProjectCard";
 import CssBaseline from '@mui/material/CssBaseline';
+import Pagination from '@mui/material/Pagination';
 import { about, experiences, projects } from "@/data";
 
 const gruppo = Gruppo({
@@ -15,6 +17,10 @@ const gruppo = Gruppo({
 });
 
 export default function Home() {
+  const [pageSize] = useState(5);
+  const [pageNumber, setPageNumber] = useState(1);
+  const projectPage = Math.ceil(projects.length / pageSize);
+
   const darkTheme = createTheme({
     palette: {
       mode: 'dark',
@@ -31,6 +37,11 @@ export default function Home() {
       },
     }
   });
+
+  const pageOnClick = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPageNumber(value);
+  }
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
@@ -88,16 +99,19 @@ export default function Home() {
           <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '5vmax' }} gap={2}>
             <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Projects</Typography>
             {
-              projects.map((item, index) =>
-                <ProjectCard
-                  key={index}
-                  name={item.name}
-                  imgPath={item.imgPath}
-                  description={item.description}
-                  link={item.link}
-                />
-              )
+              projects
+                .slice(pageSize * (pageNumber - 1), pageSize * pageNumber)
+                .map((item, index) =>
+                  <ProjectCard
+                    key={index}
+                    name={item.name}
+                    imgPath={item.imgPath}
+                    description={item.description}
+                    link={item.link}
+                  />
+                )
             }
+            <Pagination count={projectPage} variant="outlined" sx={{ m: "auto" }} page={pageNumber} onChange={pageOnClick} />
           </Box>
         </Box>
       </main>

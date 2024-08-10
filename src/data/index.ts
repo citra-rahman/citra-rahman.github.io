@@ -65,8 +65,9 @@ export const projects = [
   {
     name: "Traject Data Application",
     imgPath: "/traject-data.png",
-    description: "Web Prototype challenge by Top Coder, built using React JS and Material UI.",
-    link: "https://wonderful-alfajores-4e26f4.netlify.app"
+    description:
+      "Web Prototype challenge by Top Coder, built using React JS and Material UI.",
+    link: "https://wonderful-alfajores-4e26f4.netlify.app",
   },
   {
     name: "To Do Application",
@@ -82,4 +83,11 @@ export const projects = [
       "A responsive website of Covid-19 to increase awareness of corona virus built with NextJS.",
     link: "https://covid101.netlify.app/",
   },
+  {
+    name: "Shispland OMS",
+    imgPath: "/shipsland.png",
+    description:
+      "An Order Management System to manage order from all e-commerce platforms. Built with ReactJS (front-end), Node Js (Backend)",
+    link: "https://shipsland.netlify.app/",
+  }
 ];
