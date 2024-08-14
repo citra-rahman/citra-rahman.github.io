@@ -3,9 +3,10 @@ import Image from "next/image";
 import { Box, Typography, Button } from "@mui/material";
 import { projectProp } from "@/libs/type";
 
-export default function ProjectCard({ name, imgPath, description, link, createdAt, updatedAt }: projectProp) {
+export default function ProjectCard({ id, name, imgPath, description, link }: projectProp) {
     return (
         <Button
+            id={`button-${id}`}
             href={link}
             style={{
                 display: "flex",

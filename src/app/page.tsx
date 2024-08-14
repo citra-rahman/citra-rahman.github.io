@@ -9,9 +9,9 @@ import WorkCard from "@/components/WorkCard";
 import ProjectCard from "@/components/ProjectCard";
 import CssBaseline from '@mui/material/CssBaseline';
 import Pagination from '@mui/material/Pagination';
-import { getExperiences } from "@/libs/api";
-import { about, projects } from "@/data";
-import { workProp } from "@/libs/type";
+import { getExperiences, getProjects } from "@/libs/api";
+import { about } from "@/data";
+import { projectProp, workProp } from "@/libs/type";
 
 const gruppo = Gruppo({
   subsets: ["latin"],
@@ -21,8 +21,9 @@ const gruppo = Gruppo({
 export default function Home() {
   const [pageSize] = useState(5);
   const [experiences, setExperiences] = useState([]);
+  const [projects, setProjects] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
-  const projectPage = Math.ceil(projects.length / pageSize);
+  const [projectPage, setProjectPage] = useState(1);
 
   const darkTheme = createTheme({
     palette: {
@@ -46,8 +47,15 @@ export default function Home() {
   }
 
   useEffect(() => {
-    getExperiences().then(res =>setExperiences(res));
+    getExperiences().then(res => setExperiences(res));
   }, []);
+
+  useEffect(() => {
+    getProjects().then(res => {
+      setProjects(res);
+      setProjectPage(Math.ceil(projects.length / pageSize));
+    });
+  }, [pageSize, projects.length]);
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -92,20 +100,20 @@ export default function Home() {
           <Box id="experiences" component="section" display='flex' flexDirection='column' gap={5} sx={{ mb: '15vmax' }}>
             <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>Experiences</Typography>
             {
-             experiences && experiences.map((item:workProp, index) =>
-              <WorkCard
-                key={index}
-                {...item}
-              />
-            )
+              experiences && experiences.map((item: workProp, index) =>
+                <WorkCard
+                  key={index}
+                  {...item}
+                />
+              )
             }
           </Box>
           <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '5vmax' }} gap={2}>
             <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Projects</Typography>
             {
-              projects
+              projects && projects
                 .slice(pageSize * (pageNumber - 1), pageSize * pageNumber)
-                .map((item, index) =>
+                .map((item: projectProp, index) =>
                   <ProjectCard
                     key={index}
                     {...item}

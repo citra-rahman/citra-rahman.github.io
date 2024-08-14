@@ -8,7 +8,6 @@ export async function addExperiences(work: workProp) {
       body: JSON.stringify(work),
     });
     const experienceJSON = await experienceCreation.json();
-    console.log(experienceJSON);
     return experienceJSON;
   } catch (error) {
     console.error(error);
@@ -31,7 +30,7 @@ export async function updateExperience(work: workProp){
           }
     );
    const updateWorkJson = await updateWork.json();
-   return updateWorkJson.data;
+   return updateWorkJson;
 }
 
 export async function deleteExperience(id: string){
@@ -46,3 +45,46 @@ export async function deleteExperience(id: string){
     return null;
 }
 
+export async function addProjects(project: projectProp) {
+  try {
+    const ProjectCreation = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/v1/projects`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(project),
+    });
+    const ProjectJSON = await ProjectCreation.json();
+    return ProjectJSON;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+export async function getProjects() {
+  const Projects = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/v1/projects`);
+  const ProjectsJson = await Projects.json();
+  return ProjectsJson;
+}
+
+export async function updateProject(work: workProp){
+    const updateProject = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/v1/project`,
+        {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(work),
+          }
+    );
+   const updateProjectJson = await updateProject.json();
+   return updateProjectJson;
+}
+
+export async function deleteProject(id: string){
+    const project  = await fetch (`${process.env.NEXT_PUBLIC_DOMAIN}/api/v1/project/${id}`,
+        {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        }
+    )
+    await project.json();
+    return null;
+}

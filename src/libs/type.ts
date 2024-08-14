@@ -13,6 +13,7 @@ export interface workProp {
 }
 
 export interface projectProp {
+  id: number;
   name: string;
   imgPath: string;
   description: string;
