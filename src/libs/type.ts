@@ -1,17 +1,22 @@
-
 export interface WindowProps {
-    window?: () => Window;
-}
-export interface workCardProp {
-    date: string;
-    title: string;
-    description: string[];
-    tags: string[];
+  window?: () => Window;
 }
 
-export interface projectCardProp {
-    name: string;
-    imgPath: string;
-    description: string;
-    link: string;
+export interface workProp {
+  id: number;
+  date: string;
+  title: string;
+  description: string;
+  tags: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface projectProp {
+  name: string;
+  imgPath: string;
+  description: string;
+  link: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

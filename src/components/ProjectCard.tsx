@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { Box, Typography, Button } from "@mui/material";
-import { projectCardProp } from "@/libs/type";
+import { projectProp } from "@/libs/type";
 
-export default function ProjectCard({ name, imgPath, description, link }: projectCardProp) {
+export default function ProjectCard({ name, imgPath, description, link, createdAt, updatedAt }: projectProp) {
     return (
         <Button
             href={link}
