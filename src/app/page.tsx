@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Box, Button, Toolbar, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Gruppo } from "next/font/google";
@@ -9,9 +9,7 @@ import WorkCard from "@/components/WorkCard";
 import ProjectCard from "@/components/ProjectCard";
 import CssBaseline from '@mui/material/CssBaseline';
 import Pagination from '@mui/material/Pagination';
-import { getExperiences, getProjects } from "@/libs/api";
-import { about } from "@/data";
-import { projectProp, workProp } from "@/libs/type";
+import { about, experiences, projects } from "@/data";
 
 const gruppo = Gruppo({
   subsets: ["latin"],
@@ -20,10 +18,8 @@ const gruppo = Gruppo({
 
 export default function Home() {
   const [pageSize] = useState(5);
-  const [experiences, setExperiences] = useState([]);
-  const [projects, setProjects] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
-  const [projectPage, setProjectPage] = useState(1);
+  const projectPage = Math.ceil(projects.length / pageSize);
 
   const darkTheme = createTheme({
     palette: {
@@ -45,17 +41,6 @@ export default function Home() {
   const pageOnClick = (event: React.ChangeEvent<unknown>, value: number) => {
     setPageNumber(value);
   }
-
-  useEffect(() => {
-    getExperiences().then(res => setExperiences(res));
-  }, []);
-
-  useEffect(() => {
-    getProjects().then(res => {
-      setProjects(res);
-      setProjectPage(Math.ceil(projects.length / pageSize));
-    });
-  }, [pageSize, projects.length]);
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -100,10 +85,13 @@ export default function Home() {
           <Box id="experiences" component="section" display='flex' flexDirection='column' gap={5} sx={{ mb: '15vmax' }}>
             <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>Experiences</Typography>
             {
-              experiences && experiences.map((item: workProp, index) =>
+              experiences.map((item, index) =>
                 <WorkCard
                   key={index}
-                  {...item}
+                  date={item.date}
+                  title={item.title}
+                  description={item.description}
+                  tags={item.tags}
                 />
               )
             }
@@ -111,12 +99,15 @@ export default function Home() {
           <Box id="projects" component="section" display='flex' flexDirection='column' sx={{ mb: '5vmax' }} gap={2}>
             <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} gutterBottom>Projects</Typography>
             {
-              projects && projects
+              projects
                 .slice(pageSize * (pageNumber - 1), pageSize * pageNumber)
-                .map((item: projectProp, index) =>
+                .map((item, index) =>
                   <ProjectCard
                     key={index}
-                    {...item}
+                    name={item.name}
+                    imgPath={item.imgPath}
+                    description={item.description}
+                    link={item.link}
                   />
                 )
             }
