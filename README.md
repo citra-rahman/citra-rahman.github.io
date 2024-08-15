@@ -1,6 +1,6 @@
 # My Dev Portfolio
 
-This repo contains my portfolio to showcase my skills in software development.
+This repo contains my portfolio to showcase my skills, past experiences, and projects in software development.
 
 # Technology Stacks
 
