@@ -63,6 +63,12 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "Payroll Web Application",
+    imgPath: "/payroll.png",
+    description: "A full-stack payroll web application (SAAS), built using NextJs, Material UI, Next-Auth and SQLite.",
+    link: "https://payroll-next-xi.vercel.app/"
+  },
+  {
     name: "Traject Data Application",
     imgPath: "/traject-data.png",
     description:
@@ -89,5 +95,5 @@ export const projects = [
     description:
       "An Order Management System to manage order from all e-commerce platforms. Built with ReactJS (front-end), Node Js (Backend).",
     link: "https://shipsland.netlify.app/",
-  }
+  },
 ];
