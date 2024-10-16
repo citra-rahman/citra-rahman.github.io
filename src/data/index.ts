@@ -63,6 +63,13 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "Pera Lemur",
+    imgPath: "/pera-lemur.png",
+    description:
+      "A simple website for supplier built using NextJs and Material UI.",
+    link: "https://pera-lemur.netlify.app/",
+  },
+  {
     name: "Payroll Web Application",
     imgPath: "/payroll.png",
     description: "A full-stack payroll web application (SAAS), built using NextJs, Material UI, Next-Auth and SQLite.",
@@ -88,12 +95,5 @@ export const projects = [
     description:
       "A responsive website of Covid-19 to increase awareness of corona virus built with NextJS.",
     link: "https://covid101.netlify.app/",
-  },
-  {
-    name: "Shipsland OMS",
-    imgPath: "/shipsland.png",
-    description:
-      "An Order Management System to manage order from all e-commerce platforms. Built with ReactJS (front-end), Node Js (Backend).",
-    link: "https://shipsland.netlify.app/",
-  },
+  }
 ];
