@@ -66,8 +66,8 @@ export const projects = [
     name: "Pera Lemur",
     imgPath: "/pera-lemur.png",
     description:
-      "A simple website for supplier built using NextJs and Material UI.",
-    link: "https://pera-lemur.netlify.app/",
+      "A simple website for supplier. Built using NextJs and Material UI.",
+    link: "https://happyfantasybox.com",
   },
   {
     name: "Payroll Web Application",
