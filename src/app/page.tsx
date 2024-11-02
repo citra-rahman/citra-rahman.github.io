@@ -21,30 +21,12 @@ export default function Home() {
   const [pageNumber, setPageNumber] = useState(1);
   const projectPage = Math.ceil(projects.length / pageSize);
 
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-      primary: {
-        main: "#fff",
-      },
-      secondary: {
-        main: "#45afa0",
-      },
-    },
-    typography: {
-      allVariants: {
-        fontFamily: gruppo.style.fontFamily,
-      },
-    },
-  });
-
   const pageOnClick = (event: React.ChangeEvent<unknown>, value: number) => {
     setPageNumber(value);
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
+    <>
       <Header />
       <main>
         <Box
@@ -150,6 +132,6 @@ export default function Home() {
       <Box id="contacts" component="section" sx={{ pb: "5vmax" }}>
         <Footer />
       </Box>
-    </ThemeProvider>
+    </>
   );
 }

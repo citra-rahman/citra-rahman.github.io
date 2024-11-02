@@ -1,3 +1,6 @@
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from '@mui/material/styles';
+import darkTheme from '@/theme';
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -13,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <body>{children}</body>
+      </ThemeProvider>
     </html>
   );
 }
