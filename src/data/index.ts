@@ -12,7 +12,22 @@ export const about = {
 
 export const experiences = [
   {
-    date: "2019 - Present",
+    date: "2024 - Present",
+    title: "Account Manager",
+    description: [
+      " Develop trusted relationships with assigned customers, serving as the main point of contact.",
+      "Understand client goals, strategies, and challenges to offer appropriate products or services.",
+      "Manage the full client lifecycle: onboarding, account growth, renewal, and issue resolution.",
+      "Collaborate with internal teams ( support, product, finance) to ensure client satisfaction.",
+      "Prepare regular reports on account performance and client feedback.",
+      "Identify opportunities to upsell, cross-sell, or expand the client relationship.",
+      "Ensure timely and successful delivery of solutions based on client objectives.",
+      "Track key account metrics (e.g., revenue, churn, satisfaction).",
+    ],
+    tags: ["CRM", "Sales", "Customer Satisfaction"],
+  },
+  {
+    date: "2019 - 2024",
     title: "Freelance Web Developer",
     description: [
       "Create UI Prototype using For Traject Data Application",
@@ -72,8 +87,9 @@ export const projects = [
   {
     name: "Payroll Web Application",
     imgPath: "/payroll.png",
-    description: "A full-stack payroll web application (SAAS), built using NextJs, Material UI, Next-Auth and SQLite.",
-    link: "https://payroll-next-xi.vercel.app/"
+    description:
+      "A full-stack payroll web application (SAAS), built using NextJs, Material UI, Next-Auth and SQLite.",
+    link: "https://payroll-next-xi.vercel.app/",
   },
   {
     name: "Traject Data Application",
@@ -95,5 +111,5 @@ export const projects = [
     description:
       "A responsive website of Covid-19 to increase awareness of corona virus built with NextJS.",
     link: "https://covid101.netlify.app/",
-  }
+  },
 ];
