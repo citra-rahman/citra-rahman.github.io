@@ -78,6 +78,13 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "FM Marketing",
+    imgPath: "/fm.png",
+    description:
+      "Fm Marketing is a quality customer services company",
+    link: "https://www.fmmarketing.info",
+  },
+  {
     name: "Pera Lemur",
     imgPath: "/pera-lemur.png",
     description:
