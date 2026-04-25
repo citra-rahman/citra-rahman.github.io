@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { navItems } from "@/data";
 import { WindowProps } from "@/libs/type";
+import { about } from "@/data";
 
 const drawerWidth = 240;
 
@@ -29,15 +30,27 @@ export default function Header(props: WindowProps) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h5" color="secondary" sx={{ my: 2 }}>
-        <span className="hexagon">CR</span>
+      <Typography
+        variant="h5"
+        component="div"
+        sx={{ display: { xs: "none", sm: "block" } }}
+      >
+        FOLIO / ARCHIVE
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item, index) => (
+        {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton href={`#${item}`} sx={{ textAlign: "center" }}>
-              <ListItemText primary={`${index + 1}. ${item}`} />
+            <ListItemButton
+              href={`#${item}`}
+              sx={{
+                textAlign: "center",
+                "&:hover": {
+                  color: "primary.main",
+                },
+              }}
+            >
+              <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -51,10 +64,15 @@ export default function Header(props: WindowProps) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+      <AppBar component="nav" color="info">
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            padding: { md: "2vmax 5vmax" },
+          }}
+        >
           <IconButton
-            color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -65,19 +83,41 @@ export default function Header(props: WindowProps) {
           <Typography
             variant="h5"
             component="div"
-            color="secondary"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            fontWeight={900}
+            sx={{ display: { xs: "none", sm: "block" } }}
           >
-            <span className="hexagon">CR</span>
+            FOLIO / ARCHIVE
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item, index) => (
-              <Button href={`#${item}`} key={item} color="primary">
-                <span style={{ color: "#45afa0" }}>0{index + 1}.</span>
+            {navItems.map((item) => (
+              <Button
+                href={`#${item}`}
+                key={item}
+                color="secondary"
+                sx={{
+                  paddingY: 0,
+                  marginX: { sm: 1, md: 2 },
+                  fontSize: "12px",
+                  "&:hover": {
+                    color: "primary.main",
+                    borderRadius: 0,
+                    borderBottom: "1px solid #800020",
+                  },
+                }}
+              >
                 {item}
               </Button>
             ))}
           </Box>
+          <Button
+            variant="contained"
+            color="primary"
+            target="_blank"
+            href={about.resumeLink}
+            sx={{ display: { xs: "none", sm: "block" } }}
+          >
+            Download CV
+          </Button>
         </Toolbar>
       </AppBar>
       <nav>

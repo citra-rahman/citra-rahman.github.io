@@ -1,27 +1,36 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
-import { Gruppo } from "next/font/google";
+import { Work_Sans, Noto_Serif } from "next/font/google";
 
-const gruppo = Gruppo({
-    subsets: ["latin"],
-    weight: "400",
-  });
-  
-const darkTheme = createTheme({
+const work_sans = Work_Sans({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const noto_serif = Noto_Serif({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const theme = createTheme({
   palette: {
-    mode: "dark",
+    mode: "light",
     primary: {
-      main: "#fff",
+      main: "#800020",
     },
     secondary: {
-      main: "#45afa0",
+      main: "#a8a29e",
+    },
+    info: {
+      main: "#fff",
     },
   },
   typography: {
-    allVariants: {
-      fontFamily: gruppo.style.fontFamily,
+    fontFamily: work_sans.style.fontFamily,
+    h5: {
+      fontFamily: noto_serif.style.fontFamily
     },
   },
 });
 
-export default darkTheme;
+export default theme;
