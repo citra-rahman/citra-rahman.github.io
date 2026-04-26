@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
 import { navItems } from "@/data";
 import { WindowProps } from "@/libs/type";
 import { about } from "@/data";
@@ -30,13 +31,17 @@ export default function Header(props: WindowProps) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography
+      <Link
+        href="#"
         variant="h5"
-        component="div"
-        sx={{ display: { xs: "none", sm: "block" } }}
+        sx={{
+          fontWeight: 900,
+          color: "black",
+          display: { xs: "none", sm: "block" },
+        }}
       >
         FOLIO / ARCHIVE
-      </Typography>
+      </Link>
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -84,14 +89,21 @@ export default function Header(props: WindowProps) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
+          <Link
             variant="h5"
-            component="div"
-            fontWeight={900}
-            sx={{ display: { xs: "none", sm: "block" } }}
+            href="#"
+            sx={{
+              color: "black",
+              fontWeight: 900,
+              textDecoration: "none",
+              display: {
+                xs: "none",
+                sm: "block",
+              },
+            }}
           >
             FOLIO / ARCHIVE
-          </Typography>
+          </Link>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button
