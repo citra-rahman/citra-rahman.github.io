@@ -64,7 +64,11 @@ export default function Header(props: WindowProps) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" color="info">
+      <AppBar
+        component="nav"
+        color="info"
+        sx={{ borderBottom: "2px solid black" }}
+      >
         <Toolbar
           sx={{
             display: "flex",
