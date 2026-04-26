@@ -1,20 +1,14 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { Box, Button, Toolbar, Typography } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Gruppo } from "next/font/google";
+import { Grid, Stack } from "@mui/material";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WorkCard from "@/components/WorkCard";
 import ProjectCard from "@/components/ProjectCard";
-import CssBaseline from "@mui/material/CssBaseline";
 import Pagination from "@mui/material/Pagination";
 import { about, experiences, projects } from "@/data";
-
-const gruppo = Gruppo({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export default function Home() {
   const [pageSize] = useState(5);
@@ -33,46 +27,58 @@ export default function Home() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "start",
-            padding: { md: "15vmax 25vmax", xs: "5vmax" },
+            alignContent: "space-between",
+            padding: { md: 15, xs: 5 },
           }}
         >
           <Toolbar />
-          <Box id="about" component="section" sx={{ mb: "15vmax" }}>
-            <Typography variant="h6" sx={{ color: "#45afa0" }} gutterBottom>
-              Hi, my name is{" "}
-            </Typography>
-            <Typography
-              sx={{
-                fontWeight: "bold",
-                typography: { xs: "h5", md: "h3" },
-              }}
-              gutterBottom
-            >
-              {about.name}
-            </Typography>
-            <Typography
-              sx={{
-                typography: { xs: "h5", md: "h3" },
-                fontWeight: "bold",
-              }}
-              gutterBottom
-            >
-              {about.headline}
-            </Typography>
-            <Typography component="div" sx={{ pb: 4, textAlign: "justify" }}>
-              {about.description}
-            </Typography>
-            <Button
-              component="a"
-              color="secondary"
-              variant="outlined"
-              target="_blank"
-              href={about.resumeLink}
-            >
-              {about.resumeButtonName}
-            </Button>
-          </Box>
+          <Grid
+            id="index"
+            component="section"
+            spacing={12}
+            sx={{
+              alignItems: "center",
+              marginBottom: 15,
+              paddingBottom: 15,
+              borderBottom: "5px solid black",
+            }}
+            container
+          >
+            <Grid size={{ md: 8, xs: 6 }}>
+              <Stack spacing={2}>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontSize: "84px",
+                    fontWeight: "bold",
+                    color: "primary.main",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {about.name}
+                </Typography>
+                <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                  {about.headline}
+                </Typography>
+                <Typography sx={{ textAlign: "justify" }}>
+                  {about.description}
+                </Typography>
+              </Stack>
+            </Grid>
+            <Grid size={{ md: 4, xs: 6 }}>
+              <Image
+                alt="profile-picture"
+                src="/animation-pp.png"
+                width={300}
+                height={400}
+                style={{
+                  padding: 8,
+                  filter: "saturate(0)",
+                  border: "2px solid black",
+                }}
+              />
+            </Grid>
+          </Grid>
           <Box
             id="experiences"
             component="section"
