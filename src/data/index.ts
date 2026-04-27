@@ -1,5 +1,9 @@
 export const navItems = ["index", "selected works", "journal", "about"];
 
+export const programmingLanguages = ["JAVASCRIPT(ES6+)", "HTML5 / CSS3", "RUBY", "SQL"];
+
+export const framework = ["Next.js", "Node.js", "React.js", "Ruby On Rails"]
+
 export const about = {
   name: "Citra P Rahman",
   headline: "Shopify and Full-Stack Web Developer",
@@ -21,7 +25,7 @@ export const experiences = [
     tags: ["CRM", "Sales", "Customer Satisfaction"],
   },
   {
-    date: "2019 - 2024",
+    date: "2019 - PRESENT",
     title: "Freelance Web Developer",
     company: "Self Employee",
     description: [

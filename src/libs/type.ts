@@ -16,3 +16,7 @@ export interface projectCardProp {
     description: string;
     link: string;
 }
+
+export interface frameworkProp{
+    item: string;
+}

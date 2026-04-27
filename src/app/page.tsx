@@ -5,10 +5,17 @@ import { Box, Button, Toolbar, Typography } from "@mui/material";
 import { Grid, Stack } from "@mui/material";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Framework from "@/components/Framework";
 import ProjectCard from "@/components/ProjectCard";
 import Pagination from "@mui/material/Pagination";
 import ExperienceCard from "@/components/ExperienceCard";
-import { about, experiences, navItems, projects } from "@/data";
+import {
+  about,
+  experiences,
+  projects,
+  programmingLanguages,
+  framework,
+} from "@/data";
 
 export default function Home() {
   const [pageSize] = useState(5);
@@ -28,6 +35,7 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             alignContent: "space-between",
+            backgroundColor: "#fdf9f8",
             padding: { md: 15, xs: 5 },
           }}
         >
@@ -44,7 +52,7 @@ export default function Home() {
             }}
             container
           >
-            <Grid size={{ md: 8, xs: 6 }}>
+            <Grid size={{ md: 8, xs: 12 }}>
               <Stack spacing={2}>
                 <Typography
                   variant="h5"
@@ -65,7 +73,14 @@ export default function Home() {
                 </Typography>
               </Stack>
             </Grid>
-            <Grid size={{ md: 4, xs: 6 }}>
+            <Grid
+              size={{ md: 4, xs: 12 }}
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+              }}
+            >
               <Image
                 alt="profile-picture"
                 src="/animation-pp.png"
@@ -80,20 +95,20 @@ export default function Home() {
             </Grid>
           </Grid>
           <Grid
-            id="experiences"
+            id="journal"
             component="section"
-            spacing={8}
+            spacing={12}
             sx={{
               display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
+              flexDirection: { md: "row", xs: "column" },
+              alignItems: "start",
               marginBottom: 15,
               paddingBottom: 15,
               borderBottom: "5px solid black",
             }}
             container
           >
-            <Grid id="professional_journey" size={7}>
+            <Grid id="professional_journey" size={{ md: 7, xs: 12 }}>
               <Grid
                 id="title"
                 sx={{
@@ -107,9 +122,9 @@ export default function Home() {
               >
                 <Typography
                   color="primary"
-                  sx={{ 
+                  sx={{
                     fontSize: "11px",
-                    fontWeight: 900 
+                    fontWeight: 900,
                   }}
                 >
                   02. CHRONOLOGY
@@ -133,8 +148,53 @@ export default function Home() {
                 ))}
               </Stack>
             </Grid>
-            <Grid id="technical_foundation" size={5}>
-              2
+            <Grid id="technical_foundation" size={{ md: 5, xs: 12 }}>
+              <Typography
+                color="primary"
+                sx={{
+                  fontSize: "11px",
+                  fontWeight: 900,
+                }}
+              >
+                03. ARCHITECTURE
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{ fontSize: "46px", fontWeight: "bold", marginBottom: 5 }}
+              >
+                Technical Foundations
+              </Typography>
+              <Typography
+                variant="body1"
+                color="secondary"
+                sx={{ mb: 2, fontWeight: "bold" }}
+                gutterBottom
+              >
+                CORE LANGUAGES
+              </Typography>
+              <Grid
+                id="programming_languages"
+                spacing={2}
+                sx={{ mb: 5 }}
+                container
+              >
+                {programmingLanguages.map((item, index) => (
+                  <Button
+                    key={index}
+                    variant="outlined"
+                    color="secondary"
+                    sx={{ fontSize: "12px" }}
+                  >
+                    {item}
+                  </Button>
+                ))}
+              </Grid>
+              <Typography variant="h6" color="secondary" gutterBottom>
+                FRAMEWORKS &amp; RUNTIMES
+              </Typography>
+              {framework.map((item) => (
+                <Framework key={item} item={item} />
+              ))}
             </Grid>
           </Grid>
           <Box id="projects">
