@@ -195,6 +195,20 @@ export default function Home() {
               {framework.map((item) => (
                 <Framework key={item} item={item} />
               ))}
+              <Box
+                id="quotes"
+                sx={{
+                  color: "#fff",
+                  padding: 5,
+                  backgroundColor: "primary.main",
+                }}
+              >
+                <Typography gutterBottom>
+                  &quot;Engineering is the bridge between human problems and
+                  digital permanence.&quot;
+                </Typography>
+                <Typography>— C. PUSPITA RAHMAN</Typography>
+              </Box>
             </Grid>
           </Grid>
           <Box id="projects">
