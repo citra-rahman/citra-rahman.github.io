@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import { Box, Button, Toolbar, Typography } from "@mui/material";
 import { Grid, Stack } from "@mui/material";
 import Header from "@/components/Header";
@@ -275,9 +274,7 @@ export default function Home() {
           </Stack>
         </Box>
       </main>
-      <Box id="contacts" component="section" sx={{ pb: "5vmax" }}>
-        <Footer />
-      </Box>
+      <Footer />
     </>
   );
 }
