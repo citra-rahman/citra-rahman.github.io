@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
-import { Box, Typography, Button } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import { projectCardProp } from "@/libs/type";
 
 export default function ProjectCard({
+  id,
   name,
   imgPath,
   description,
@@ -12,34 +13,34 @@ export default function ProjectCard({
   return (
     <Button
       href={link}
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "start",
-        alignItems: "center",
-        textTransform: "capitalize",
-      }}
       target="_blank"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "start",
+        border: "1px solid black",
+        "&:hover": {
+          transform: "scale(1.1)"
+        },
+      }}
     >
       <Image
         alt={name}
         src={imgPath}
-        width={100}
-        height={100}
-        style={{
-          objectFit: "contain",
-        }}
+        width={id === 1 || id === 4 ? 700 : 400}
+        height={500}
       />
-      <Box sx={{ pl: 3 }}>
-        <Typography>{name}</Typography>
-        <Typography
-          sx={{
-            color: "#8496b1",
-          }}
-        >
-          {description}
-        </Typography>
-      </Box>
+      <Typography
+        variant="h5"
+        sx={{
+          color: "#000",
+          textTransform: "capitalize",
+          fontWeight: "bold",
+        }}
+      >
+        {name}
+      </Typography>
+      <Typography variant="body2">{description}</Typography>
     </Button>
   );
 }

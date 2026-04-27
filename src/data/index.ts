@@ -1,8 +1,13 @@
 export const navItems = ["index", "selected works", "journal", "about"];
 
-export const programmingLanguages = ["JAVASCRIPT(ES6+)", "HTML5 / CSS3", "RUBY", "SQL"];
+export const programmingLanguages = [
+  "JAVASCRIPT(ES6+)",
+  "HTML5 / CSS3",
+  "RUBY",
+  "SQL",
+];
 
-export const framework = ["Next.js", "Node.js", "React.js", "Ruby On Rails"]
+export const framework = ["Next.js", "Node.js", "React.js", "Ruby On Rails"];
 
 export const about = {
   name: "Citra P Rahman",
@@ -38,7 +43,7 @@ export const experiences = [
     title: "Backend Engineer",
     company: "Happy5",
     description: [
-      "Maintain and Add New Features for Performance Management System.",
+      "Maintained and Add New Features for Performance Management System.",
     ],
     tags: [
       "Ruby On Rails",
@@ -61,7 +66,7 @@ export const experiences = [
     date: "2018 - 2018",
     title: "Card Personalization System Engineer",
     company: "IDEMIA",
-    description: ["Maintain Card Personalization System for Card Factories"],
+    description: ["Maintained Card Personalization System for Card Factories"],
     tags: ["Java"],
   },
   {
@@ -69,7 +74,7 @@ export const experiences = [
     company: "Praisindo Tech",
     title: "Full Stack Net Developer",
     description: [
-      "Maintain and Add New Features for Investment Management System.",
+      "Maintained and Added New Features for Investment Management System.",
       "Help customer service solve technical issues.",
     ],
     tags: ["ASP NET", "SOAP", "REST", "SQL Server", "T-SQL", "SSRS"],
@@ -88,7 +93,6 @@ export const projects = [
     imgPath: "/pera-lemur.png",
     description:
       "A simple website for supplier. Built using NextJs and Material UI.",
-
     link: "https://happyfantasybox.com",
   },
   {
@@ -118,5 +122,36 @@ export const projects = [
     description:
       "A responsive website of Covid-19 to increase awareness of corona virus built with NextJS.",
     link: "https://covid101.netlify.app/",
+  },
+];
+
+export const project_simulations = [
+  {
+    id: 1,
+    name: "Payroll Web Application",
+    imgPath: "/payroll_web_app.png",
+    description: "System Architecture / Fintech",
+    link: "https://payroll-next-xi.vercel.app/",
+  },
+  {
+    id: 2,
+    name: "FM Marketing",
+    imgPath: "/fm2.png",
+    description: "Quality customer services company",
+    link: "https://www.fmmarketing.info",
+  },
+  {
+    id: 3,
+    name: "Pera Lemur",
+    imgPath: "/pera_lemur.png",
+    description: "E-COMMERCE / GROWTH",
+    link: "https://happyfantasybox.com",
+  },
+  {
+    id: 4,
+    name: "Enterprise Infrastructure",
+    imgPath: "/backend.png",
+    description: "E-COMMERCE / GROWTH",
+    link: "/",
   },
 ];

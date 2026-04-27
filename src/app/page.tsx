@@ -7,25 +7,21 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Framework from "@/components/Framework";
 import ProjectCard from "@/components/ProjectCard";
-import Pagination from "@mui/material/Pagination";
 import ExperienceCard from "@/components/ExperienceCard";
 import {
   about,
   experiences,
-  projects,
+  project_simulations,
   programmingLanguages,
   framework,
 } from "@/data";
 
+const titleStyle = {
+  fontSize: "12px",
+  fontWeight: 900,
+};
+
 export default function Home() {
-  const [pageSize] = useState(5);
-  const [pageNumber, setPageNumber] = useState(1);
-  const projectPage = Math.ceil(projects.length / pageSize);
-
-  const pageOnClick = (event: React.ChangeEvent<unknown>, value: number) => {
-    setPageNumber(value);
-  };
-
   return (
     <>
       <Header />
@@ -94,6 +90,50 @@ export default function Home() {
               />
             </Grid>
           </Grid>
+          <Grid id="selected works">
+            <Grid
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography color="primary" sx={titleStyle} gutterBottom>
+                01. CURATED OUTPUT
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{ fontSize: "45px", fontWeight: "bold" }}
+                gutterBottom
+              >
+                Selected Artifacts
+              </Typography>
+            </Grid>
+            <Grid
+              size={6}
+              spacing={6}
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                marginBottom: 10,
+                paddingBottom: 10,
+                borderBottom: "5px solid black",
+              }}
+              container
+            >
+              {project_simulations.map((item, index) => (
+                <ProjectCard
+                  key={index}
+                  id={item.id}
+                  name={item.name}
+                  imgPath={item.imgPath}
+                  description={item.description}
+                  link={item.link}
+                />
+              ))}
+            </Grid>
+          </Grid>
           <Grid
             id="journal"
             component="section"
@@ -120,13 +160,7 @@ export default function Home() {
                   borderBottom: "1px solid black",
                 }}
               >
-                <Typography
-                  color="primary"
-                  sx={{
-                    fontSize: "11px",
-                    fontWeight: 900,
-                  }}
-                >
+                <Typography color="primary" sx={titleStyle} gutterBottom>
                   02. CHRONOLOGY
                 </Typography>
                 <Typography
@@ -149,13 +183,7 @@ export default function Home() {
               </Stack>
             </Grid>
             <Grid id="technical_foundation" size={{ md: 5, xs: 12 }}>
-              <Typography
-                color="primary"
-                sx={{
-                  fontSize: "11px",
-                  fontWeight: 900,
-                }}
-              >
+              <Typography color="primary" sx={titleStyle} gutterBottom>
                 03. ARCHITECTURE
               </Typography>
               <Typography
@@ -211,32 +239,6 @@ export default function Home() {
               </Box>
             </Grid>
           </Grid>
-          <Box id="projects">
-            <Typography
-              sx={{ typography: { xs: "h5", md: "h3" } }}
-              gutterBottom
-            >
-              Projects
-            </Typography>
-            {projects
-              .slice(pageSize * (pageNumber - 1), pageSize * pageNumber)
-              .map((item, index) => (
-                <ProjectCard
-                  key={index}
-                  name={item.name}
-                  imgPath={item.imgPath}
-                  description={item.description}
-                  link={item.link}
-                />
-              ))}
-            <Pagination
-              count={projectPage}
-              variant="outlined"
-              sx={{ m: "auto" }}
-              page={pageNumber}
-              onChange={pageOnClick}
-            />
-          </Box>
         </Box>
       </main>
       <Box id="contacts" component="section" sx={{ pb: "5vmax" }}>

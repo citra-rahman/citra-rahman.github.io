@@ -11,6 +11,7 @@ export interface workCardProp {
 }
 
 export interface projectCardProp {
+    id: number;
     name: string;
     imgPath: string;
     description: string;
