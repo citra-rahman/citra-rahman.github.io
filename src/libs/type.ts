@@ -5,8 +5,9 @@ export interface WindowProps {
 export interface workCardProp {
     date: string;
     title: string;
+    company: string;
     description: string[];
-    tags: string[];
+    tags?: string[];
 }
 
 export interface projectCardProp {

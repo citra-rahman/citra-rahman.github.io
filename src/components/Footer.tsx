@@ -6,8 +6,15 @@ import { navItems } from "@/data";
 
 export default function Footer() {
   return (
-    <Grid direction="row" justifyContent="center" container>
-      <Grid sx={{ display: { xs: "none", md: "block" } }} item>
+    <Grid
+      sx={{
+        display: "flex",
+        direction: "row",
+        justifyContent: "center",
+      }}
+      container
+    >
+      <Grid sx={{ display: { xs: "none", md: "block" } }}>
         {navItems.map((item, index) => (
           <Button href={`#${item}`} key={item} color="primary">
             <span style={{ color: "#45afa0" }}>0{index + 1}.</span>
@@ -15,7 +22,7 @@ export default function Footer() {
           </Button>
         ))}
       </Grid>
-      <Grid item>
+      <Grid>
         <IconButton href="mailto:citrapuspita.r@gmail.com" target="_blank">
           <EmailIcon />
         </IconButton>
