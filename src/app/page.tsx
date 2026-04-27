@@ -33,6 +33,7 @@ export default function Home() {
             alignContent: "space-between",
             backgroundColor: "#fdf9f8",
             padding: { md: 15, xs: 5 },
+            borderBottom: "5px solid #800020",
           }}
         >
           <Toolbar />
@@ -44,7 +45,7 @@ export default function Home() {
               alignItems: "center",
               marginBottom: 5,
               paddingBottom: 10,
-              borderBottom: "5px solid black",
+              borderBottom: "2px solid black",
             }}
             container
           >
@@ -118,7 +119,7 @@ export default function Home() {
                 flexDirection: "row",
                 marginBottom: 10,
                 paddingBottom: 10,
-                borderBottom: "5px solid black",
+                borderBottom: "2px solid black",
               }}
               container
             >
@@ -144,7 +145,7 @@ export default function Home() {
               alignItems: "start",
               marginBottom: 15,
               paddingBottom: 15,
-              borderBottom: "5px solid black",
+              borderBottom: "2px solid black",
             }}
             container
           >
@@ -239,6 +240,39 @@ export default function Home() {
               </Box>
             </Grid>
           </Grid>
+          <Stack
+            id="hero"
+            component="section"
+            sx={{
+              padding: 10,
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{ fontSize: "5rem", fontWeight: "bold" }}
+              gutterBottom
+            >
+              READY TO BUILD
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{ fontSize: "2.5rem", color: "primary.main" }}
+              gutterBottom
+            >
+              YOUR OWN E-COMMERCE?
+            </Typography>
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                padding: 2,
+                borderRadius: 0,
+              }}
+            >
+              INITIATE PROJECT
+            </Button>
+          </Stack>
         </Box>
       </main>
       <Box id="contacts" component="section" sx={{ pb: "5vmax" }}>
