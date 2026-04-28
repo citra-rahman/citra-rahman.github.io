@@ -9,6 +9,7 @@ export default function Footer() {
   };
   return (
     <Stack
+      id="contact"
       direction="row"
       spacing={8}
       sx={{
@@ -17,9 +18,12 @@ export default function Footer() {
         alignItems: "center",
       }}
     >
-      <Typography variant="h5" sx={{ fontSize: "21px", fontStyle: "italic" }}>ARCHIVAL PERSISTENCE</Typography>
+      <Typography variant="h5" sx={{ fontSize: "21px", fontStyle: "italic" }}>
+        ARCHIVAL PERSISTENCE
+      </Typography>
       <Typography sx={{ fontSize: "11px", maxWidth: 250 }}>
-        © 2024 ARCHIVAL PERSISTENCE. BUILT FOR THE DISCERNING WEB.
+        © {new Date(Date.now()).getFullYear()} ARCHIVAL PERSISTENCE. BUILT FOR
+        THE DISCERNING WEB.
       </Typography>
       <Stack direction="row" spacing={2}>
         <Link

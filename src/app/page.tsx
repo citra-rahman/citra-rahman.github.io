@@ -263,7 +263,9 @@ export default function Home() {
             </Typography>
             <Button
               variant="contained"
+              href="https://wa.me/6281270551911"
               color="primary"
+              target="_blank"
               sx={{
                 padding: 2,
                 borderRadius: 0,
