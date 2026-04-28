@@ -63,7 +63,7 @@ export default function Home() {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { md: "42px", xs: "28px" },
+                    fontSize: { md: "40px", xs: "23px" },
                     fontWeight: "bold",
                   }}
                 >
