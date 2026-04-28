@@ -53,7 +53,7 @@ export default function Home() {
                 <Typography
                   variant="h5"
                   sx={{
-                    fontSize: "84px",
+                    fontSize: { md: "84px", xs: "48px" },
                     fontWeight: "bold",
                     color: "primary.main",
                     textTransform: "uppercase",
@@ -61,7 +61,12 @@ export default function Home() {
                 >
                   {about.name}
                 </Typography>
-                <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                <Typography
+                  sx={{
+                    fontSize: { md: "42px", xs: "28px" },
+                    fontWeight: "bold",
+                  }}
+                >
                   {about.headline}
                 </Typography>
                 <Typography sx={{ textAlign: "justify" }}>
@@ -98,7 +103,7 @@ export default function Home() {
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "space-between",
-                paddingBottom: 4
+                paddingBottom: { md: 4, xs: 2 },
               }}
             >
               <Typography color="primary" sx={titleStyle} gutterBottom>
@@ -121,8 +126,8 @@ export default function Home() {
               sx={{
                 display: "flex",
                 flexDirection: "row",
-                marginBottom: 10,
-                paddingBottom: 10,
+                marginBottom: { md: 10, xs: 5 },
+                paddingBottom: { md: 10, xs: 5 },
                 justifyContent: "center",
                 borderBottom: "2px solid black",
               }}
@@ -148,8 +153,8 @@ export default function Home() {
               display: "flex",
               flexDirection: { md: "row", xs: "column" },
               alignItems: "start",
-              marginBottom: 15,
-              paddingBottom: 15,
+              marginBottom: { md: 15, xs: 7 },
+              paddingBottom: { md: 15, xs: 7 },
               borderBottom: "2px solid black",
             }}
             container
@@ -161,7 +166,7 @@ export default function Home() {
                 sx={{
                   display: "flex",
                   direction: "row",
-                  paddingY: 7,
+                  paddingY: { md: 7, xs: 2 },
                   alignItems: "center",
                   justifyContent: "space-between",
                   borderBottom: "1px solid black",
@@ -172,7 +177,10 @@ export default function Home() {
                 </Typography>
                 <Typography
                   variant="h5"
-                  sx={{ fontSize: {md: "46px", xs: "23px"}, fontWeight: "bold" }}
+                  sx={{
+                    fontSize: { md: "46px", xs: "23px" },
+                    fontWeight: "bold",
+                  }}
                 >
                   Professional Journey
                 </Typography>
@@ -195,7 +203,11 @@ export default function Home() {
               </Typography>
               <Typography
                 variant="h5"
-                sx={{ fontSize: "46px", fontWeight: "bold", marginBottom: 5 }}
+                sx={{
+                  fontSize: { md: "46px", xs: "28px" },
+                  fontWeight: "bold",
+                  marginBottom: 5,
+                }}
               >
                 Technical Foundations
               </Typography>
