@@ -10,20 +10,25 @@ export default function ProjectCard({
   description,
   link,
 }: projectCardProp) {
-  const mdBtnSize = (key: number) => (key === 1 || key === 4 ? 800 : 400);
+  const mdBtnSize = (key: number) => (key === 1 || key === 4 ? "65%" : "30%");
 
   return (
     <Button
       href={link}
       target="_blank"
       sx={{
+        padding: 0,
         display: "flex",
         flexDirection: "column",
         alignItems: "start",
+        borderRadius: 0,
         border: "1px solid black",
-        width: { md: mdBtnSize(id), xs: 400 },
         "&:hover": {
           transform: "scale(1.1)",
+        },
+        width: {
+          md: mdBtnSize(id),
+          xs: 400,
         },
       }}
     >
@@ -40,11 +45,15 @@ export default function ProjectCard({
           color: "#000",
           textTransform: "capitalize",
           fontWeight: "bold",
+          paddingX: 1,
         }}
+        gutterBottom
       >
         {name}
       </Typography>
-      <Typography variant="body2">{description}</Typography>
+      <Typography variant="body2" sx={{ paddingX: 1 }}>
+        {description}
+      </Typography>
     </Button>
   );
 }
