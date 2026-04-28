@@ -13,15 +13,27 @@ export default function Footer() {
       direction="row"
       spacing={8}
       sx={{
-        padding: 12,
-        justifyContent: "space-between",
         alignItems: "center",
+        padding: { md: 12, xs: 2 },
+        justifyContent: "space-between",
       }}
     >
-      <Typography variant="h5" sx={{ fontSize: "21px", fontStyle: "italic" }}>
+      <Typography
+        variant="h5"
+        sx={{
+          fontSize: "21px",
+          fontStyle: "italic",
+        }}
+      >
         ARCHIVAL PERSISTENCE
       </Typography>
-      <Typography sx={{ fontSize: "11px", maxWidth: 250 }}>
+      <Typography
+        sx={{
+          fontSize: "11px",
+          maxWidth: 250,
+          display: { xs: "none", sm: "block" },
+        }}
+      >
         © {new Date(Date.now()).getFullYear()} ARCHIVAL PERSISTENCE. BUILT FOR
         THE DISCERNING WEB.
       </Typography>

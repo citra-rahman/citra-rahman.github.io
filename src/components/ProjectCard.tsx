@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, Box } from "@mui/material";
 import { projectCardProp } from "@/libs/type";
 
 export default function ProjectCard({
@@ -10,6 +10,8 @@ export default function ProjectCard({
   description,
   link,
 }: projectCardProp) {
+  const mdBtnSize = (key: number) => (key === 1 || key === 4 ? 800 : 400);
+
   return (
     <Button
       href={link}
@@ -19,16 +21,18 @@ export default function ProjectCard({
         flexDirection: "column",
         alignItems: "start",
         border: "1px solid black",
+        width: { md: mdBtnSize(id), xs: 400 },
         "&:hover": {
-          transform: "scale(1.1)"
+          transform: "scale(1.1)",
         },
       }}
     >
       <Image
         alt={name}
         src={imgPath}
-        width={id === 1 || id === 4 ? 700 : 400}
-        height={500}
+        width={0}
+        height={0}
+        style={{ width: "100%", height: 400 }}
       />
       <Typography
         variant="h5"

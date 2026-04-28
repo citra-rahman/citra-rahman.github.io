@@ -92,11 +92,13 @@ export default function Home() {
           </Grid>
           <Grid id="selected works">
             <Grid
+              spacing={2}
               sx={{
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "space-between",
+                paddingBottom: 4
               }}
             >
               <Typography color="primary" sx={titleStyle} gutterBottom>
@@ -104,7 +106,10 @@ export default function Home() {
               </Typography>
               <Typography
                 variant="h5"
-                sx={{ fontSize: "45px", fontWeight: "bold" }}
+                sx={{
+                  fontSize: { md: "45px", xs: "23px" },
+                  fontWeight: "bold",
+                }}
                 gutterBottom
               >
                 Selected Artifacts
@@ -118,6 +123,7 @@ export default function Home() {
                 flexDirection: "row",
                 marginBottom: 10,
                 paddingBottom: 10,
+                justifyContent: "center",
                 borderBottom: "2px solid black",
               }}
               container
@@ -151,6 +157,7 @@ export default function Home() {
             <Grid id="professional_journey" size={{ md: 7, xs: 12 }}>
               <Grid
                 id="title"
+                spacing={4}
                 sx={{
                   display: "flex",
                   direction: "row",
@@ -165,7 +172,7 @@ export default function Home() {
                 </Typography>
                 <Typography
                   variant="h5"
-                  sx={{ fontSize: "46px", fontWeight: "bold" }}
+                  sx={{ fontSize: {md: "46px", xs: "23px"}, fontWeight: "bold" }}
                 >
                   Professional Journey
                 </Typography>
@@ -243,20 +250,26 @@ export default function Home() {
             id="hero"
             component="section"
             sx={{
-              padding: 10,
+              padding: { md: 10, xs: 5 },
               alignItems: "center",
             }}
           >
             <Typography
               variant="h5"
-              sx={{ fontSize: "5rem", fontWeight: "bold" }}
+              sx={{
+                fontSize: { md: "5rem", xs: "1.5rem" },
+                fontWeight: "bold",
+              }}
               gutterBottom
             >
               READY TO BUILD
             </Typography>
             <Typography
               variant="h5"
-              sx={{ fontSize: "2.5rem", color: "primary.main" }}
+              sx={{
+                fontSize: { md: "2.5rem", xs: "1rem" },
+                color: "primary.main",
+              }}
               gutterBottom
             >
               YOUR OWN E-COMMERCE?
