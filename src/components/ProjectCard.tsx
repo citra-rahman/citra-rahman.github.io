@@ -4,14 +4,11 @@ import { Typography, Button, Box } from "@mui/material";
 import { projectCardProp } from "@/libs/type";
 
 export default function ProjectCard({
-  id,
   name,
   imgPath,
   description,
   link,
 }: projectCardProp) {
-  const mdBtnSize = (key: number) => (key === 1 || key === 4 ? "65%" : "30%");
-
   return (
     <Button
       href={link}
@@ -27,8 +24,8 @@ export default function ProjectCard({
           transform: "scale(1.1)",
         },
         width: {
-          md: mdBtnSize(id),
-          xs: 400,
+          md: "100%",
+          xs: {xs: 300, sm: 400, md: 600},
         },
       }}
     >

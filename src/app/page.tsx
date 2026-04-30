@@ -121,27 +121,30 @@ export default function Home() {
               </Typography>
             </Grid>
             <Grid
-              size={6}
-              spacing={6}
+              spacing={{ xs: 4, md: 8 }}
+              columns={{ xs: 4, sm: 8, md: 12 }}
               sx={{
-                display: "flex",
-                flexDirection: "row",
                 marginBottom: { md: 10, xs: 5 },
                 paddingBottom: { md: 10, xs: 5 },
-                justifyContent: "center",
                 borderBottom: "2px solid black",
+                justifyContent: "center",
+                alignItems: "center",
               }}
               container
             >
               {project_simulations.map((item, index) => (
-                <ProjectCard
+                <Grid
                   key={index}
-                  id={item.id}
-                  name={item.name}
-                  imgPath={item.imgPath}
-                  description={item.description}
-                  link={item.link}
-                />
+                  size={{ xs: 4, md: [1, 4].includes(item.id) ? 8 : 4 }}
+                >
+                  <ProjectCard
+                    id={item.id}
+                    name={item.name}
+                    imgPath={item.imgPath}
+                    description={item.description}
+                    link={item.link}
+                  />
+                </Grid>
               ))}
             </Grid>
           </Grid>
