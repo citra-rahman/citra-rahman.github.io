@@ -11,7 +11,7 @@ export const framework = ["Next.js", "Node.js", "React.js", "Ruby On Rails"];
 
 export const about = {
   name: "Citra P Rahman",
-  headline: "Shopify and Full-Stack Web Developer",
+  headline: "Full-Stack Web Developer",
   description:
     "I'm a Shopify & full-stack web developer focused on building and optimizing eCommerce experiences that don't just look good — but actually convert. With a background in software engineering, I bring a technical edge to Shopify development, from deep theme customization to performance optimization and scalable backend integrations. I've worked with modern technologies including Ruby on Rails, Node.js, and React, allowing me to go beyond basic Shopify setups and deliver custom solutions tailored to business needs.",
   resumeButtonName: " Check out my Resume",
