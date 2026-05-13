@@ -13,7 +13,7 @@ export const about = {
   name: "Citra P Rahman",
   headline: "Full-Stack Web Developer",
   description:
-    "I'm a Shopify & full-stack web developer focused on building and optimizing eCommerce experiences that don't just look good — but actually convert. With a background in software engineering, I bring a technical edge to Shopify development, from deep theme customization to performance optimization and scalable backend integrations. I've worked with modern technologies including Ruby on Rails, Node.js, and React, allowing me to go beyond basic Shopify setups and deliver custom solutions tailored to business needs.",
+   "Software Engineer with 7+ years of experience building scalable web applications and 3+ years supporting SaaS customers in technical onboarding and API integrations. Experienced in bridging engineering and business teams, improving system performance, and increasing customer adoption. Passionate about building reliable systems and delivering measurable business impact.",
   resumeButtonName: " Check out my Resume",
   resumeLink:
     "https://www.dropbox.com/scl/fi/sln4vwoc5dnmwyro41hjz/my-cv.pdf?rlkey=yrd5lp0oksfftah12gx9273h4&st=9p22rq1w&raw=1",
