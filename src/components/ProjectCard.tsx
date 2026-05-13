@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Typography, Button, Box } from "@mui/material";
 import { projectCardProp } from "@/libs/type";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function ProjectCard({
   name,
@@ -25,7 +26,7 @@ export default function ProjectCard({
         },
         width: {
           md: "100%",
-          xs: {xs: 300, sm: 400, md: 600},
+          xs: { xs: 300, sm: 400, md: 600 },
         },
       }}
     >
@@ -34,21 +35,42 @@ export default function ProjectCard({
         src={imgPath}
         width={0}
         height={0}
-        style={{ width: "100%", height: 400 }}
+        style={{ width: "100%", height: 600 }}
+        objectFit="contain"
+        loading="lazy"
       />
-      <Typography
-        variant="h5"
+      <Box
         sx={{
-          color: "#000",
-          textTransform: "capitalize",
-          fontWeight: "bold",
-          paddingX: 1,
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "100%",
+          padding: 1,
         }}
-        gutterBottom
       >
-        {name}
-      </Typography>
-      <Typography variant="body2" sx={{ paddingX: 1 }}>
+        <Typography
+          variant="h5"
+          sx={{
+            color: "#000",
+            textTransform: "capitalize",
+            fontWeight: "bold",
+            lineHeight: 1,
+          }}
+          gutterBottom
+        >
+          {name}
+        </Typography>
+        <ArrowForwardIcon
+          fontSize="large"
+          sx={{
+            "&:hover": {
+              transform: "translateX(0.5rem)",
+            },
+          }}
+        />
+      </Box>
+      <Typography variant="body2" sx={{ padding: 1 }}>
         {description}
       </Typography>
     </Button>

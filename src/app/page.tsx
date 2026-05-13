@@ -10,7 +10,7 @@ import ExperienceCard from "@/components/ExperienceCard";
 import {
   about,
   experiences,
-  project_simulations,
+  highlight_projects,
   programmingLanguages,
   framework,
 } from "@/data";
@@ -132,7 +132,7 @@ export default function Home() {
               }}
               container
             >
-              {project_simulations.map((item, index) => (
+              {highlight_projects.map((item, index) => (
                 <Grid
                   key={index}
                   size={{ xs: 4, md: [1, 4].includes(item.id) ? 8 : 4 }}

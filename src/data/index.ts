@@ -125,33 +125,33 @@ export const projects = [
   },
 ];
 
-export const project_simulations = [
+export const highlight_projects = [
   {
     id: 1,
-    name: "Payroll Web Application",
-    imgPath: "/payroll_web_app.png",
-    description: "System Architecture / Fintech",
-    link: "https://payroll-next-xi.vercel.app/",
+    name: "Lakeysha Hijabi",
+    imgPath: "/lakeysha.png",
+    description: "Shopify Custom Theme for E-Commerce.",
+    link: "https://lakeysha-hijabi.myshopify.com/",
   },
   {
     id: 2,
     name: "FM Marketing",
-    imgPath: "/fm2.png",
-    description: "Quality customer services company",
+    imgPath: "/fm.png",
+    description: "Quality customer services company.",
     link: "https://www.fmmarketing.info",
   },
   {
     id: 3,
-    name: "Pera Lemur",
-    imgPath: "/pera_lemur.png",
-    description: "E-COMMERCE / GROWTH",
-    link: "https://happyfantasybox.com",
+    name: "Misha",
+    imgPath: "/misha.png",
+    description: "Shopify stores from scratch",
+    link: "/",
   },
   {
     id: 4,
-    name: "Enterprise Infrastructure",
-    imgPath: "/backend.png",
-    description: "SCALABILITY / BACKEND ENGINEER",
-    link: "/",
+    name: "Lanima",
+    imgPath: "/lanima.gif",
+    description: "A website for Coffee Shop.",
+    link: "https://lanima.netlify.app/",
   },
 ];
